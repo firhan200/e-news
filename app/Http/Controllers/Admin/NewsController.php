@@ -17,7 +17,7 @@ class NewsController extends Controller
 
     	$this->model = new \App\Models\News;
     	$this->data['title'] = "News";
-    	$this->data['paginate'] = 10;
+    	$this->data['paginate'] = $this->__getSettingValueByName('pagination');
     	/* folder in views & routes name */
     	$this->data['objectName'] = 'news';
     }
@@ -67,13 +67,15 @@ class NewsController extends Controller
     	//process data
     	$title = $request->input('title');
     	$summary = $request->input('summary');
-    	$body = $request->input('body');
+        $body = $request->input('body');
+    	$author = $request->input('author');
     	$isActive = $request->input('isActive')=="on" ? 1 : 0;
 
     	//insert data to model
     	$this->model->title = $title;
     	$this->model->summary = $summary;
-    	$this->model->body = $body;
+        $this->model->body = $body;
+    	$this->model->author = $author;
     	$this->model->isActive = $isActive;
     	$this->model->isDeleted = 0;
 
@@ -125,7 +127,8 @@ class NewsController extends Controller
     	//insert data to model
     	$obj->title = $request->input('title');
     	$obj->summary = $request->input('summary');
-    	$obj->body = $request->input('body');
+        $obj->body = $request->input('body');
+    	$obj->author = $request->input('author');
     	$obj->isActive = $isActive;
 
     	//save model

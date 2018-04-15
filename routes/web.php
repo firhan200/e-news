@@ -39,4 +39,15 @@ Route::prefix('admin')->group(function () {
 	    Route::post('/editProcess', 'Admin\CategoryController@editProcess');
 	    Route::get('/delete/{id}/{isDeleted}', 'Admin\CategoryController@deleteProcess');
     });
+
+    /*setting*/
+    Route::prefix('setting')->group(function(){
+    	Route::get('/', 'Admin\SettingController@list');
+	    Route::get('/add', 'Admin\SettingController@add');
+	    Route::post('/addProcess', 'Admin\SettingController@addProcess');
+	    Route::get('/{id}', 'Admin\SettingController@detail');
+	    Route::get('/edit/{id}', 'Admin\SettingController@edit');
+	    Route::post('/editProcess', 'Admin\SettingController@editProcess');
+	    Route::get('/delete/{id}/{isDeleted}', 'Admin\SettingController@deleteProcess');
+    });
 });

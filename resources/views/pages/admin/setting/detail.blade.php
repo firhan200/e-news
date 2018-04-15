@@ -8,23 +8,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        	<div class="content-title">Detail {{ $title }}</div> 
-        	
-            <div class="content">
-        		<div class="label">Title</div>
-        		{{ $obj->title }}
+        	<div class="content-title">Detail {{ $title }}</div>  
+
+        	<div class="content">
+        		<div class="label">Name</div>
+        		{{ $obj->name }}
         	</div>
         	<div class="content">
-        		<div class="label">Summary</div>
-        		{{ $obj->summary }}
-        	</div>
-        	<div class="content">
-        		<div class="label">Author</div>
-        		{{ $obj->author }}
-        	</div>
-        	<div class="content">
-        		<div class="label">Content</div>
-        		{!! $obj->body !!}
+        		<div class="label">Value</div>
+        		{{ $obj->value }}
         	</div>
         	<div class="content">
         		<div class="label">Created At</div>

@@ -13,20 +13,12 @@
         	<form action="{{ url('/admin/'.$objectName.'/addProcess') }}" method="post" class="disable-form">
                 {{ csrf_field() }}   
                 <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="title" class="form-control" placeholder="news title" maxlength="150" required>
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="name" maxlength="150" required>
                 </div>
                 <div class="form-group">
-                    <label>Summary</label>
-                    <textarea name="summary" rows="4" class="form-control" placeholder="news summary" maxlength="200" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Author</label>
-                    <input type="text" name="author" class="form-control" placeholder="author" maxlength="150" required>
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <textarea name="body" class="form-control ckeditor" placeholder="news content" required></textarea>
+                    <label>Value</label>
+                    <input type="text" name="value" class="form-control" placeholder="value" maxlength="150" required>
                 </div>
                 <div class="form-group">
                     <label>Is Active</label>

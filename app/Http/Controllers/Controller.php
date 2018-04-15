@@ -19,4 +19,16 @@ class Controller extends BaseController
     	);
     	return $user;
     }
+
+    public function __getSettingValueByName($settingName){
+    	$settings = new \App\Models\Setting;
+    	$setting = $settings::where('name', $settingName)->first();
+    	if($setting!=null){
+    		//found
+    		return $setting->value;
+    	}else{
+    		//not found
+    		return null;
+    	}
+    }
 }

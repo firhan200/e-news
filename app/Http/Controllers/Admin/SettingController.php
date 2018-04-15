@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Redirect;
 use Session;
 
-class CategoryController extends Controller
+class SettingController extends Controller
 {
     protected $model;
     protected $data;
@@ -15,11 +15,11 @@ class CategoryController extends Controller
     public function __construct(){
         $this->middleware('adminAuth');
 
-        $this->model = new \App\Models\Category;
-        $this->data['title'] = "Category";
-        $this->data['paginate'] = $this->__getSettingValueByName('pagination');
+        $this->model = new \App\Models\Setting;
+        $this->data['title'] = "Setting";
+        $this->data['paginate'] = 10;
         /* folder in views & routes name */
-        $this->data['objectName'] = 'category';
+        $this->data['objectName'] = 'setting';
     }
 
     public function list(Request $request){
@@ -65,13 +65,11 @@ class CategoryController extends Controller
 
     public function addProcess(Request $request){
         //process data
-        $name = $request->input('name');
-        $hexColour = $request->input('hexColour');
         $isActive = $request->input('isActive')=="on" ? 1 : 0;
 
         //insert data to model
-        $this->model->name = $name;
-        $this->model->hexColour = $hexColour;
+        $this->model->name = $request->input('name');
+        $this->model->value = $request->input('value');
         $this->model->isActive = $isActive;
         $this->model->isDeleted = 0;
 
@@ -122,7 +120,7 @@ class CategoryController extends Controller
         $isActive = $request->input('isActive')=="on" ? 1 : 0;
         //insert data to model
         $obj->name = $request->input('name');
-        $obj->hexColour = $request->input('hexColour');
+        $obj->value = $request->input('value');
         $obj->isActive = $isActive;
 
         //save model
@@ -150,9 +148,9 @@ class CategoryController extends Controller
 
         //trigger flash message
         if($isDeleted==1){
-            $message = "Successfully delete ".$obj->name;
+            $message = "Successfully delete ".$obj->title;
         }else{
-            $message = "Successfully restore ".$obj->name;
+            $message = "Successfully restore ".$obj->title;
         }
         Session::flash('message', $message);
 

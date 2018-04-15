@@ -117,6 +117,16 @@ body {
 	font-size:10pt !important;
 }
 
+.content{
+	margin-bottom: 10px;
+	background-color: #f2f2f2;
+	padding:20px;
+}
+
+.content .label{
+	font-weight: bold;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

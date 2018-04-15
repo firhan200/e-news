@@ -14,6 +14,7 @@
 				<a href="{{ url('/admin/home') }}" class="@yield('home')"><li><i class="fa fa-home"></i> Home</li></a>
 				<a href="{{ url('/admin/news') }}" class="@yield('news')"><li><i class="fa fa-newspaper-o"></i> News</li></a>
 				<a href="{{ url('/admin/category') }}" class="@yield('category')"><li><i class="fa fa-tag"></i> Categories</li></a>
+				<a href="{{ url('/admin/setting') }}" class="@yield('setting')"><li><i class="fa fa-cog"></i> Setting</li></a>
 				<a href="#" data-toggle="modal" data-target="#myModal"><li><i class="fa fa-sign-out"></i> Logout</li></a>
 			</ul>
 		</div>

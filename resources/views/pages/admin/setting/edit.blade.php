@@ -17,21 +17,12 @@
                 {{ csrf_field() }}   
                 <input type="hidden" name="id" value="{{ $obj->id }}">
                 <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="title" class="form-control" placeholder="news title" maxlength="150" value="{{ $obj->title }}" required>
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="name" maxlength="150" value="{{ $obj->name }}" required>
                 </div>
                 <div class="form-group">
-                    <label>Summary</label>
-                    <textarea name="summary" rows="4" class="form-control" placeholder="news summary" maxlength="200" required>{{ $obj->summary }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label>Author</label>
-                    <input type="text" name="author" class="form-control" placeholder="author" maxlength="150" value="{{ $obj->author }}" required>
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <input type="hidden" id="content" value="{{ $obj->body }}">
-                    <textarea name="body" id="newsContent" class="form-control ckeditor" placeholder="news content" required></textarea>
+                    <label>Value</label>
+                    <input type="text" name="value" class="form-control" placeholder="value" maxlength="150" value="{{ $obj->value }}" required>
                 </div>
                 <div class="form-group">
                     <label>Is Active</label>

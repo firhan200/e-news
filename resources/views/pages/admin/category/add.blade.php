@@ -27,7 +27,7 @@
                 </div>
                 <br/>
                 <div class="form-group" align="right">
-                    <a href="{{ url('/admin/news') }}" class="btn btn-warning"><i class="fa fa-chevron-left"></i> Back</a>
+                    <a href="{{ url('/admin/'.$objectName) }}" class="btn btn-warning"><i class="fa fa-chevron-left"></i> Back</a>
                     <button type="submit" class="btn btn-primary btn-submit"><i class="fa fa-send"></i> Post</button>
                 </div>
             </form> 
